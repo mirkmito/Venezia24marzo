@@ -78,18 +78,11 @@
     </div>
   </div>
 
-  <script>
-    function openVote() {
-      const speaker = document.getElementById("speaker").value;
-      document.getElementById("status").innerText =
-        "✅ Votazione aperta per: " + speaker;
-    }
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-    function closeVote() {
-      document.getElementById("status").innerText =
-        "⛔ Votazione chiusa";
-    }
-  </script>
+<script src="firebase.js"></script>
+<script src="admin.js"></script>
 
 </body>
 </html>

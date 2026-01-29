@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <title>Regia – Generali Leadership Behaviours Live</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Regia Evento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background-color: #c8102e;
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .panel {
-      width: 420px;
-      background: rgba(255,255,255,0.08);
       padding: 30px;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    select {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      margin-bottom: 20px;
     }
     button {
       width: 100%;
       padding: 14px;
+      margin: 10px 0;
       font-size: 16px;
       background: white;
       color: #c8102e;
@@ -47,45 +23,38 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    button:hover {
-      background: #f2f2f2;
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
     }
-    .status {
-      margin-top: 20px;
-      text-align: center;
-      font-style: italic;
-    }
+    ul { padding-left: 20px; }
   </style>
 </head>
 <body>
 
-  <div class="panel">
-    <h1>🎛️ Regia Evento</h1>
+  <h1>🎛️ Regia Evento</h1>
 
-    <label for="speaker">Speaker attivo</label>
-    <select id="speaker">
-      <option>Alessandro Bianchi</option>
-      <option>Francesca Rinaldi</option>
-      <option>Luca Moretti</option>
-      <option>Giulia Conti</option>
-      <option>Marco De Santis</option>
-      <option>Elena Ferrero</option>
-    </select>
+  <label>Speaker attivo</label>
+  <select id="speaker">
+    <option>Alessandro Bianchi</option>
+    <option>Francesca Rinaldi</option>
+    <option>Luca Moretti</option>
+    <option>Giulia Conti</option>
+    <option>Marco De Santis</option>
+    <option>Elena Ferrero</option>
+  </select>
 
-    <button onclick="openVote()">APRI VOTAZIONE</button>
+  <button onclick="openVote()">APRI VOTAZIONE</button>
+  <button onclick="closeVote()">CHIUDI VOTAZIONE</button>
 
-    <div class="status" id="status">
-      Votazione chiusa
-    </div>
-  </div>
+  <h2>📊 Risultati live</h2>
+  <ul id="results"></ul>
 
-  <script>
-    function openVote() {
-      const speaker = document.getElementById("speaker").value;
-      document.getElementById("status").innerText =
-        "✅ Votazione aperta per: " + speaker;
-    }
-  </script>
-
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
+``

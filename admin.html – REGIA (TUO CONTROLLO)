@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Regia – Generali Behaviours Live</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-generali">
+  <div class="container">
+    <h1>🎛️ Regia Evento</h1>
+
+    <label>Nome Speaker</label>
+    <input id="speakerInput" placeholder="Nome Cognome" />
+
+    <div class="controls">
+      <button onclick="openVote()">APRI VOTAZIONE</button>
+      <button onclick="closeVote()">CHIUDI VOTAZIONE</button>
+      <button onclick="resetVotes()">RESET</button>
+    </div>
+
+    <h2>📊 Risultati Live</h2>
+    <ul id="results"></ul>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

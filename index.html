@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Generali Leadership Behaviours Live</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #c8102e;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 16px;
+      background: white;
+      color: #c8102e;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
+  </style>
 </head>
-<body class="bg-generali">
-  <div class="container">
-    <h1 id="title">Sei connesso all’evento</h1>
-    <p id="subtitle">
-      Rimani connesso.<br />
-      La votazione si aprirà automaticamente.
-    </p>
+<body>
 
-    <div id="vote" class="hidden">
-      <h2 id="speaker"></h2>
-      <p>Quale comportamento Generali hai riconosciuto maggiormente?</p>
+  <h1 id="title">✅ Sei connesso all’evento</h1>
+  <p id="subtitle">
+    Rimani connesso.<br>
+    La votazione si aprirà automaticamente.
+  </p>
 
-      <button onclick="vote('Human Touch')">Human Touch</button>
-      <button onclick="vote('Collaboration')">Collaboration</button>
-      <button onclick="vote('Better Every Day')">Better Every Day</button>
-      <button onclick="vote('Ownership')">Ownership</button>
-    </div>
+  <div id="vote" class="hidden">
+    <h2 id="speaker"></h2>
+    <p>Quale comportamento Generali hai riconosciuto maggiormente?</p>
 
-    <div id="thanks" class="hidden">
-      <h2>✅ Grazie per il tuo contributo</h2>
-      <p>Rimani connesso per le prossime votazioni.</p>
-    </div>
+    <button onclick="vote('Human Touch')">Human Touch</button>
+    <button onclick="vote('Collaboration')">Collaboration</button>
+    <button onclick="vote('Better Every Day')">Better Every Day</button>
+    <button onclick="vote('Ownership')">Ownership</button>
+  </div>
+
+  <div id="thanks" class="hidden">
+    <h2>✅ Grazie per il tuo contributo</h2>
+    <p>Rimani connesso per le prossime votazioni.</p>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>

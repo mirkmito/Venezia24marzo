@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generali Leadership Behaviours Live</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-generali">
+  <div class="container">
+    <h1 id="title">Sei connesso all’evento</h1>
+    <p id="subtitle">
+      Rimani connesso.<br />
+      La votazione si aprirà automaticamente.
+    </p>
+
+    <div id="vote" class="hidden">
+      <h2 id="speaker"></h2>
+      <p>Quale comportamento Generali hai riconosciuto maggiormente?</p>
+
+      <button onclick="vote('Human Touch')">Human Touch</button>
+      <button onclick="vote('Collaboration')">Collaboration</button>
+      <button onclick="vote('Better Every Day')">Better Every Day</button>
+      <button onclick="vote('Ownership')">Ownership</button>
+    </div>
+
+    <div id="thanks" class="hidden">
+      <h2>✅ Grazie per il tuo contributo</h2>
+      <p>Rimani connesso per le prossime votazioni.</p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

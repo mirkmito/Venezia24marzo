@@ -1,10 +1,10 @@
-const speakerInput = document.getElementById("speakerInput");
-const resultsList = document.getElementById("results");
+const results = document.getElementById("results");
 
 function openVote() {
+  const speaker = document.getElementById("speaker").value;
   db.ref("event").set({
     status: "open",
-    speaker: speakerInput.value || "Speaker",
+    speaker: speaker
   });
 }
 
@@ -12,17 +12,12 @@ function closeVote() {
   db.ref("event/status").set("closed");
 }
 
-function resetVotes() {
-  db.ref("votes").set({});
-}
-
-db.ref("votes").on("value", (snap) => {
-  resultsList.innerHTML = "";
-  const data = snap.val() || {};
-  Object.keys(data).forEach((key) => {
+db.ref("votes").on("value", snapshot => {
+  results.innerHTML = "";
+  const data = snapshot.val() || {};
+  Object.keys(data).forEach(key => {
     const li = document.createElement("li");
-    li.innerText = `${key}: ${data[key]}`;
-    resultsList.appendChild(li);
+    li.innerText = key + ": " + data[key];
+    results.appendChild(li);
   });
 });
-``
